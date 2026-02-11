@@ -1,0 +1,11 @@
+steps:
+  # Paso 1: Copiar los DAGs al bucket de Composer
+  - name: 'gcr.io/cloud-builders/gsutil'
+    args: ['-m', 'rsync', '-r', '-c', '-d', 'dags/', 'gs://${_COMPOSER_BUCKET}/dags']
+  
+  # Paso 2: Copiar los Scripts al bucket de Datos (donde Spark los busca)
+  - name: 'gcr.io/cloud-builders/gsutil'
+    args: ['-m', 'rsync', '-r', '-c', '-d', 'scripts/', 'gs://${_DATALAKE_BUCKET}/scripts']
+
+options:
+  logging: CLOUD_LOGGING_ONLY
