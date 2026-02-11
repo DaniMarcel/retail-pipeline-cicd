@@ -6,8 +6,7 @@ from airflow.providers.google.cloud.operators.dataproc import (
 )
 from airflow.providers.google.cloud.sensors.gcs import GCSObjectExistenceSensor
 from airflow.utils.dates import days_ago
-# DAG actualizado automaticamente desde GitHub por Daniel
-# --- CONFIGURACIÓN (EDITA ESTO) ---
+
 PROJECT_ID = 'dataengineerp'  # Tu ID de proyecto
 BUCKET_NAME = 'datalake-retail-danielmarcel' # Tu bucket real
 CLUSTER_NAME = 'cluster-ventas-spark'
